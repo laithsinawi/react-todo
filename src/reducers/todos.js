@@ -12,6 +12,7 @@ const todos = (state = [], action) => {
                 }
             ];
         case TOGGLE_TODO: {
+            console.log('toggle_todo action');
             return state.map( (todo) => {
                 if(todo.id === action.id) {
                     return {
