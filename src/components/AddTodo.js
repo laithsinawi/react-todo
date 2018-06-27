@@ -10,8 +10,8 @@ class AddTodo extends Component {
   handleOnSubmit(e){
     e.preventDefault();
     const task = this.refs.task.value;
-
     this.props.dispatch(addTodo(task));
+    this.refs.task.value = '';
   }
 
   render() {
