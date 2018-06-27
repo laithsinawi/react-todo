@@ -8,6 +8,7 @@ export default class App extends Component {
       <div>
         <h1>Todo App</h1>
         <AddTodo />
+        <hr />
         <TodoList />
       </div>
     );

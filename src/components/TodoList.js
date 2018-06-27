@@ -10,11 +10,11 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                Todo List
+                <h3>Todo List</h3>
                 <ul>
-                {this.props.todos.map( (todo, index) => (
+                {this.props.todos.map( todo => (
                     <Todo 
-                        key={index}
+                        key={todo.id}
                         {...todo}
                         onClick={() => this.props.toggleTodo(todo.id)}
                     />                    
