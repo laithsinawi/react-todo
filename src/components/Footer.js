@@ -1,19 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../actions';
+import { setVisibilityFilter, VisibilityFilters } from '../actions';
 
-const Footer = () => {
+const { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
+
+const Footer = (props) => {
   return (
-    <div>
-        <a href="javascript:">All</a>
-        <a href="javascript:">Active</a>
-        <a href="javascript:">Completed</a>
+    <div className="footer">
+      <a href="javascript:" onClick={() => { props.dispatch(setVisibilityFilter(SHOW_ALL)) }}>All</a>
+      <a href="javascript:" onClick={() => { props.dispatch(setVisibilityFilter(SHOW_COMPLETED)) }}>Completed</a>
+      <a href="javascript:" onClick={() => { props.dispatch(setVisibilityFilter(SHOW_ACTIVE)) }}>Active</a>
     </div>
   )
 }
-
-// const mapDispatchToProps = dispatch => ({
-//     onClick: () => dispatch(setVisibilityFilter())
-// });
 
 export default connect()(Footer);

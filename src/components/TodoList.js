@@ -29,7 +29,7 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => ({
-    todos: VisibleTodos(state.todos)
+    todos: VisibleTodos(state.todos, state.visibilityFilter)
 });
 
 const mapDispatchToProps = dispatch => ({

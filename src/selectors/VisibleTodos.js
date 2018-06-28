@@ -1,12 +1,15 @@
 import { VisibilityFilters } from '../actions';
 
+const { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
+
 const VisibleTodos = (todos, filter) => {
+    
     switch(filter) {
-        case VisibilityFilters.SHOW_ALL:
+        case SHOW_ALL:
             return todos;
-        case VisibilityFilters.SHOW_ACTIVE:
+        case SHOW_ACTIVE:
             return todos.filter( todo => !todo.completed );
-        case VisibilityFilters.SHOW_COMPLETED:
+        case SHOW_COMPLETED:
             return todos.filter( todo => todo.completed);
         default:
             return todos;          
