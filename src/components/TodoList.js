@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions/index';
+import VisibleTodos from '../selectors/VisibleTodos';
 import Todo from './Todo';
+
+
 
 class TodoList extends Component {
     constructor(props) {
@@ -26,7 +29,7 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => ({
-    todos: state.todos
+    todos: VisibleTodos(state.todos)
 });
 
 const mapDispatchToProps = dispatch => ({
